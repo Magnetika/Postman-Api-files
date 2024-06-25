@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "44219d55-6dc5-4b99-b4e0-1f6fe663db2f",
+		"name": "Create Card",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34960495"
+	},
+	"item": [
+		{
+			"name": "CreateCard-200OK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList=6676f5468f27d14c354e10a3&key=33dfb4814300eb16cc2284151f73bf3f&token=ATTA21d9cb12afa00b436614e656158905bd08636031f29e4c54fb6f3d1e873be771E633E70C",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "6676f5468f27d14c354e10a3"
+						},
+						{
+							"key": "key",
+							"value": "33dfb4814300eb16cc2284151f73bf3f"
+						},
+						{
+							"key": "token",
+							"value": "ATTA21d9cb12afa00b436614e656158905bd08636031f29e4c54fb6f3d1e873be771E633E70C"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateCard-404-Not find the board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList=5abbe4b7ddc1b351ef961414",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "5abbe4b7ddc1b351ef961414"
+						},
+						{
+							"key": "key",
+							"value": "APIKey",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "APIToken' \\",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateCard-401-Unauthorized card permission",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList=6676f5468f27d14c354e10a3",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "6676f5468f27d14c354e10a3"
+						},
+						{
+							"key": "key",
+							"value": "APIKey",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "APIToken' \\",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateCard-400-Invalid value for idList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList=6676f5468f27d14c354e10a",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "6676f5468f27d14c354e10a"
+						},
+						{
+							"key": "key",
+							"value": "APIKey",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "APIToken' \\",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

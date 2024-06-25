@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "9e5f92b5-cd5b-47f1-8ea2-ef272f9709c1",
+		"name": "Refresh a Card",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34960495"
+	},
+	"item": [
+		{
+			"name": "Status code 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/66780057f8f3184d98c79efa",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"66780057f8f3184d98c79efa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Card- Put a new name 200OK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Card name is updated\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.name).to.eql(\"Updated Card Name\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Card Name\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.trello.com/1/cards/66780057f8f3184d98c79efa?key=33dfb4814300eb16cc2284151f73bf3f&token=ATTA21d9cb12afa00b436614e656158905bd08636031f29e4c54fb6f3d1e873be771E633E70C&name=updatedName",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"66780057f8f3184d98c79efa"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "33dfb4814300eb16cc2284151f73bf3f"
+						},
+						{
+							"key": "token",
+							"value": "ATTA21d9cb12afa00b436614e656158905bd08636031f29e4c54fb6f3d1e873be771E633E70C"
+						},
+						{
+							"key": "name",
+							"value": "updatedName"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Card- Put a Description- 200OK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Card description is updated\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.desc).to.eql(\"This is a new description for the card\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"desc\": \"This is a new description for the card\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.trello.com/1/cards/66780057f8f3184d98c79efa?key=33dfb4814300eb16cc2284151f73bf3f&token=ATTA21d9cb12afa00b436614e656158905bd08636031f29e4c54fb6f3d1e873be771E633E70C",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"66780057f8f3184d98c79efa"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "33dfb4814300eb16cc2284151f73bf3f"
+						},
+						{
+							"key": "token",
+							"value": "ATTA21d9cb12afa00b436614e656158905bd08636031f29e4c54fb6f3d1e873be771E633E70C"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Card-400 Bad request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Card name is updated\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.name).to.eql(\"Updated Card Name\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true,
+					"host": true,
+					"content-length": true,
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Card Name\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.trello.com/1/cards/66780057f8f3184d98c79efa?key=33dfb4814300eb16cc2284151f73bf3f&token=ATTA21d9cb12afa00b436614e656158905bd08636031f29e4c54fb6f3d1e873be771E633E70C&name=updatedName",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"66780057f8f3184d98c79efa"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "33dfb4814300eb16cc2284151f73bf3f"
+						},
+						{
+							"key": "token",
+							"value": "ATTA21d9cb12afa00b436614e656158905bd08636031f29e4c54fb6f3d1e873be771E633E70C"
+						},
+						{
+							"key": "name",
+							"value": "updatedName"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Card-401- invalid api key",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Card name is updated\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.name).to.eql(\"Updated Card Name\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Card Name\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.trello.com/1/cards/66780057f8f3184d98c79efa?token=ATTA21d9cb12afa00b436614e656158905bd08636031f29e4c54fb6f3d1e873be771E633E70C&name=updatedName",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"66780057f8f3184d98c79efa"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "33dfb4814300eb16cc2284151f73bf3f",
+							"disabled": true
+						},
+						{
+							"key": "token",
+							"value": "ATTA21d9cb12afa00b436614e656158905bd08636031f29e4c54fb6f3d1e873be771E633E70C"
+						},
+						{
+							"key": "name",
+							"value": "updatedName"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Card delete-200OK",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/66780057f8f3184d98c79efa?key=33dfb4814300eb16cc2284151f73bf3f&token=ATTA21d9cb12afa00b436614e656158905bd08636031f29e4c54fb6f3d1e873be771E633E70C&name=updatedName",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"66780057f8f3184d98c79efa"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "33dfb4814300eb16cc2284151f73bf3f"
+						},
+						{
+							"key": "token",
+							"value": "ATTA21d9cb12afa00b436614e656158905bd08636031f29e4c54fb6f3d1e873be771E633E70C"
+						},
+						{
+							"key": "name",
+							"value": "updatedName"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
